@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operasi Penjumlahan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+        button.reset {
+            background-color: #f44336;
+        }
+        .hasil {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Penjumlahan</h2>
+        <form id="penjumlahanForm">
+            <label for="angka1">Bilangan pertama</label>
+            <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+            
+            <label for="angka2">Bilangan kedua</label>
+            <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+
+            <button type="button" onclick="jumlah()">Jumlahkan</button>
+            <button type="reset" class="reset">Reset</button>
+        </form>
+
+        <div class="hasil">
+            Hasil: <span id="hasil">0</span>
+        </div>
+    </div>
+
+    <script>
+        function jumlah() {
+            var angka1 = parseFloat(document.getElementById('angka1').value);
+            var angka2 = parseFloat(document.getElementById('angka2').value);
+            if (isNaN(angka1) || isNaN(angka2)) {
+                alert("Input tidak boleh kosong");
+            } else {
+                var hasil = angka1 + angka2;
+                document.getElementById('hasil').innerText = hasil;
+            }
+        }
+    </script>
+</body>
+</html>
